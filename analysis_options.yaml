@@ -1,0 +1,4 @@
+analyzer:
+  errors:
+    void_checks: ignore
+include: package:flutter_lints/flutter.yaml

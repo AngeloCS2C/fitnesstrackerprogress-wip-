@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "56500026995",
+    "project_id": "fitnesstrackprogress",
+    "storage_bucket": "fitnesstrackprogress.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56500026995:android:3d79cf3a1dc87eac623406",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firebase_setup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5AFs2xyMvgfRS0tYu931N73vwuRRe8Y0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

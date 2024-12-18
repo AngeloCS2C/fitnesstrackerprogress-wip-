@@ -1,0 +1,48 @@
+plugins {
+    // Only include plugins that must be applied in this block
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'dev.flutter.flutter-gradle-plugin'
+}
+
+// Apply Kotlin Android plugin the old way to avoid version conflicts
+apply plugin: 'kotlin-android'
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader("UTF-8") { reader -> localProperties.load(reader) }
+}
+
+// Provide fallback values if not defined in local.properties
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode', '1').toInteger()
+def flutterVersionName = localProperties.getProperty('flutter.versionName', '1.0')
+
+android {
+    namespace 'com.example.flutter_firebase_setup'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.example.flutter_firebase_setup'
+        minSdk 21
+        targetSdk 34
+        versionCode flutterVersionCode
+        versionName flutterVersionName
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-analytics' // Try without analytics first
+
+}
